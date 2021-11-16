@@ -1,9 +1,15 @@
 import cards from '../data/cards.js'
 
-cards.shift();
+// cards.shift();
+
+function playAudio(url) {
+  new Audio(url).play();
+}
 
 const getData = dataCategory => {
+
     let indexOfCategory = 0;
+
     if (dataCategory === "ActionSetA") {
       indexOfCategory = 0; 
     }
@@ -28,11 +34,13 @@ const getData = dataCategory => {
     if (dataCategory === "Colors") {
       indexOfCategory = 7;
     }
-    // You should add Nature and Colors categories later, don't forget!
+
+console.log(cards[1]);
+
     return cards[indexOfCategory].map((component) => `
     <div class="flip-card">
     <div class="flip-card-inner">
-    <div class="card" id="card-section" style="width: 18rem;" >
+    <div class="card" id="card-section" onclick="${playAudio(`${component.audioSrc}`)}" style="width: 18rem;" >
             <img src="${component.image}"  style="width: 18rem; height: 15rem;" class="card-img-top" alt="img">
             <div class="card-body">
                 <p class="card-text">
@@ -53,7 +61,8 @@ const getData = dataCategory => {
     </div>
     </div>
     </div>
-    </audio>`);
+    `);
 }
+
 
 export default getData;
