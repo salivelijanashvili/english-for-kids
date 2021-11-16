@@ -1,11 +1,10 @@
 body {
     --nav-width: 200px;
-    background: #00fff2;
+    background: #000000;
     margin: 0 0 0 var(--nav-width);
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
-
 .nav {
     position: fixed;
     top: 0;
@@ -44,21 +43,9 @@ a {
     color: #009579;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 15px;
-}
-
-.grid-for-main-page{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 15px;
-}
-
 #card-section:hover {
   transform: scale(0.95);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(255, 254, 254), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .flip-card {
@@ -67,7 +54,7 @@ a {
     height: 300px;
     perspective: 1000px;
   }
-  
+
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -77,11 +64,11 @@ a {
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
-  
+
   .flip-card:active:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
+
   #card-section, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -89,12 +76,12 @@ a {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+
   #card-section {
     background-color: rgb(255, 255, 255);
     color: black;
   }
-  
+
   .flip-card-back {
     color: white;
     transform: rotateY(180deg);
@@ -105,14 +92,44 @@ a {
     height: 1em;
     margin-left: 16rem;
   }
-  
+
   .svg-icon path,
   .svg-icon polygon,
   .svg-icon rect {
     fill: #4691f6;
   }
-  
+
   .svg-icon circle {
     stroke: #4691f6;
     stroke-width: 1;
   }
+
+h1 {
+  color: white;
+}
+
+.table {
+  background-color:rgb(239, 248, 241);
+}
+
+.thread {
+  color: white;
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+	.grid-for-main-page { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+	.grid { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+   }
+}
